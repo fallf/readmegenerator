@@ -1,4 +1,4 @@
-/const inquirer = require('inquirer');
+const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
@@ -329,30 +329,6 @@ addScreenshots = readmeData => {
     if (!readmeData.screenshots) {
         readmeData.screenshots = [];
     }
-    console.log(`
-==================
-Add New Screenshot
-==================
-    `);
-    return inquirer.prompt(screenshotQues)
-    .then(screenshotData => {
-        // adds the screenshot to the array
-        readmeData.screenshots.push(screenshotData);
-        // will call addScreenshots again based on user input
-        if (screenshotData.confirmAddScreenshot) {
-            return addScreenshots(readmeData);
-        } else {
-            return readmeData;
-        };
-    });
-};
-// recursive function for adding credits
-addCredits = readmeInfo => {
-    
-    // initiates array for credits
-    if (!readmeInfo.credits) {
-        readmeInfo.credits = [];
-    };
     console.log(`
 ==============
 Add New Credit
