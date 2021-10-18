@@ -337,12 +337,12 @@ Add New Credit
     return inquirer.prompt(creditQues)
     .then(creditData => {
         // adds credits to array
-        readmeInfo.credits.push(creditData);
+        readmeData.credits.push(creditData);
         // will call addCredits again based on user input
         if (creditData.confirmAddCredit) {
-            return addCredits(readmeInfo);
+            return addCredits(readmeData);
         } else {
-            return readmeInfo;
+            return readmeData;
         }
     });
 };
